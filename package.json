@@ -2,9 +2,11 @@
   "name": "apollo-backend",
   "version": "1.0.0",
   "description": "Backend for the portfolio project implemented with Apollo GraphQL",
-  "main": "src/index.js",
+  "main": "src/index.tsx",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "start": "nodemon src/index.tsx",
+    "start:ci": "node src/index.tsx"
   },
   "repository": {
     "type": "git",
@@ -23,6 +25,6 @@
   },
   "devDependencies": {
     "jest": "^27.0.6",
-    "typescript": "^4.3.5"
+    "nodemon": "^2.0.9"
   }
 }
