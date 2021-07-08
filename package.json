@@ -2,11 +2,12 @@
   "name": "apollo-backend",
   "version": "1.0.0",
   "description": "Backend for the portfolio project implemented with Apollo GraphQL",
-  "main": "src/index.tsx",
+  "type": "module",
+  "main": "dist/src/index.tsx",
   "scripts": {
     "test": "jest",
-    "start": "nodemon src/index.tsx",
-    "start:ci": "node src/index.tsx"
+    "start": "nodemon -x node --experimental-specifier-resolution=node --loader ts-node/esm src/index.ts",
+    "start:ci": "node --experimental-specifier-resolution=node --loader ts-node/esm src/index.ts"
   },
   "repository": {
     "type": "git",
@@ -21,10 +22,14 @@
   "homepage": "https://github.com/jsem/apollo-backend#readme",
   "dependencies": {
     "apollo-server": "^2.25.2",
-    "graphql": "^15.5.1"
+    "graphql": "^15.5.1",
+    "lodash": "^4.17.21"
   },
   "devDependencies": {
+    "@types/lodash": "^4.14.171",
     "jest": "^27.0.6",
-    "nodemon": "^2.0.9"
+    "nodemon": "^2.0.9",
+    "ts-node": "^10.0.0",
+    "typescript": "^4.3.5"
   }
 }
