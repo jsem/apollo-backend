@@ -4,7 +4,7 @@ import { gql } from 'apollo-server';
 export const typeDefs = gql`
   type Query {
     post(id: Int!): Post
-    posts: Post
+    posts: [Post]!
   }
 
   type Post {
@@ -21,15 +21,11 @@ export const typeDefs = gql`
 
 export const resolvers = {
   Query: {
-    post: (id: bigint) => {
-      // get post
-      
+    post: async (_: any, { id }: { id: number }, { dataSources }: { dataSources: any }) => {
+      return await dataSources.postAPI.getPost(id);
     },
-    posts: () => {
-      // get all posts
-      return {
-
-      }
+    posts: async (_: any, __: any, { dataSources }: { dataSources: any }) => {
+      return await dataSources.postAPI.getPosts();
     },
   }
 };
