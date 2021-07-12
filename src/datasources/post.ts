@@ -12,21 +12,15 @@ export default class PostAPI extends DataSource {
     this.context = config.context;
   }
 
-  postReducer(post: Post) {
-    return {
-      id: post.id,
-    }
-  }
-
   /**
-   * Find a Post with the given ID
-   * @param id the id of the Post
-   * @returns the Post with the given id
+   * Find a Post with the given identifier
+   * @param identifier the identifier of the Post
+   * @returns the Post with the given identifier
    */
-  async getPost(id: number): Promise<Post | undefined> {
+  async getPost(identifier: string): Promise<Post | undefined> {
     return await getRepository(Post).findOne({
       where: {
-        id: id
+        identifier: identifier
       }
     });
   }
