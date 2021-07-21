@@ -1,6 +1,6 @@
 import { DataSource } from 'apollo-datasource';
 import { getRepository } from 'typeorm';
-import Post from '../entity/Post';
+import Post from '../entity/post';
 
 /**
  * Datasource for getting post data

@@ -1,5 +1,5 @@
 import { ConnectionOptions } from 'typeorm';
-import Post from '../entity/Post';
+import Post from '../entity/post';
 
 /**
  * Calculates the orm config

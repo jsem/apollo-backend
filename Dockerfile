@@ -1,7 +1,5 @@
 FROM node:lts-alpine
 
-EXPOSE 4000
-
 WORKDIR /app
 
 COPY . .
