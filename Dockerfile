@@ -1,10 +1,10 @@
-FROM node:14
+FROM node:lts-alpine
 
 EXPOSE 4000
 
-COPY . app/
-
 WORKDIR /app
+
+COPY . .
 
 RUN npm ci --production
 
